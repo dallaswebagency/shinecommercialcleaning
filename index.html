@@ -95,17 +95,22 @@ nav a.link:hover{background:var(--blue-soft);color:var(--blue)}
 
 /* hero */
 .hero{position:relative;color:#fff;background:linear-gradient(135deg,var(--navy-deep) 0%,var(--navy) 55%,#0b4aa0 100%);overflow:hidden;isolation:isolate}
-.hero::before{content:"";position:absolute;inset:0;z-index:-1;opacity:.55;background:
+.hero::before{content:"";position:absolute;inset:0;z-index:-1;opacity:.35;background:
   repeating-linear-gradient(100deg,transparent 0 120px,rgba(56,182,255,.10) 120px 122px),
   linear-gradient(105deg,transparent 30%,rgba(56,182,255,.22) 42%,transparent 52%),
   linear-gradient(105deg,transparent 58%,rgba(255,255,255,.10) 66%,transparent 74%)}
+.hero-bg{position:absolute;inset:0;z-index:-2;overflow:hidden}
+.hero-bg img{width:100%;height:100%;object-fit:cover;object-position:center;transform:scaleX(-1)}
+.hero-bg::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(6,21,68,.94) 0%,rgba(10,33,96,.86) 38%,rgba(10,33,96,.45) 70%,rgba(10,33,96,.25) 100%)}
 .glass{position:absolute;right:-40px;bottom:0;z-index:-1;display:flex;align-items:flex-end;gap:14px;opacity:.5}
 .glass i{display:block;width:90px;border-radius:6px 6px 0 0;background:
   linear-gradient(180deg,rgba(255,255,255,.28),rgba(56,182,255,.08)),
   repeating-linear-gradient(0deg,transparent 0 26px,rgba(255,255,255,.22) 26px 28px),
   repeating-linear-gradient(90deg,transparent 0 28px,rgba(255,255,255,.22) 28px 30px);
   border:1px solid rgba(255,255,255,.28)}
-.hero .wrap{display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:center;padding:64px 0 84px}
+.hero .wrap{display:block;padding:96px 0 120px}
+.hero .copy-col{max-width:640px}
+.chip{display:inline-block;margin-top:1.4em;background:var(--green);color:#fff;font:700 .85rem var(--display);padding:.6em 1.1em;border-radius:999px;box-shadow:0 8px 20px rgba(0,0,0,.25)}
 .eyebrow{display:inline-flex;align-items:center;gap:.6em;font:700 .85rem var(--display);letter-spacing:.14em;text-transform:uppercase;color:var(--sky);margin-bottom:1.1em}
 .eyebrow::before{content:"";width:34px;height:3px;border-radius:3px;background:var(--green-bright)}
 .hero h1{color:#fff}
@@ -114,9 +119,6 @@ nav a.link:hover{background:var(--blue-soft);color:var(--blue)}
 @keyframes twinkle{0%,100%{transform:scale(.7) rotate(0);opacity:.7}50%{transform:scale(1.1) rotate(20deg);opacity:1}}
 .hero .lead{font-size:1.2rem;color:#d6e6ff;max-width:34em}
 .hero .ctas{display:flex;flex-wrap:wrap;gap:14px;margin-top:1.6em}
-.hero-card{position:relative;background:#fff;border-radius:30px;padding:26px 26px 22px;box-shadow:var(--shadow-lg);transform:rotate(1.2deg)}
-.hero-card img{width:100%;height:auto}
-.hero-card .badge{position:absolute;left:-16px;bottom:-18px;background:var(--green);color:#fff;font:700 .85rem var(--display);padding:.7em 1.1em;border-radius:14px;box-shadow:0 10px 22px rgba(0,0,0,.25);transform:rotate(-3deg)}
 
 /* trust */
 .trust{background:#fff;position:relative;z-index:2;margin-top:-44px}
@@ -222,8 +224,9 @@ footer a:hover{color:var(--sky);text-decoration:underline}
 .reveal.in{opacity:1;transform:none}
 
 @media (max-width:980px){
-  .hero .wrap{grid-template-columns:1fr;padding:48px 0 78px}
-  .hero-card{max-width:440px;margin-inline:auto}
+  .hero .wrap{padding:56px 0 96px}
+  .hero-bg img{object-position:70% center}
+  .hero-bg::after{background:linear-gradient(180deg,rgba(6,21,68,.9) 0%,rgba(10,33,96,.82) 100%)}
   .trust .wrap{grid-template-columns:repeat(2,1fr)}
   .cards{grid-template-columns:repeat(2,1fr)}
   .feature{grid-template-columns:1fr}
@@ -311,9 +314,9 @@ footer a:hover{color:var(--sky);text-decoration:underline}
 <main id="main">
 
 <section class="hero" style="padding:0">
-  <div class="glass" aria-hidden="true"><i style="height:210px"></i><i style="height:330px"></i><i style="height:260px"></i><i style="height:400px"></i></div>
+  <div class="hero-bg" aria-hidden="true"><img src="assets/hero-living-room.webp" alt="" width="1260" height="709" fetchpriority="high"></div>
   <div class="wrap">
-    <div>
+    <div class="copy-col">
       <span class="eyebrow">Commercial and residential cleaning</span>
       <h1>Shine Commercial Cleaning Inc: spaces that <span class="spark">sparkle<svg aria-hidden="true"><use href="#i-star"/></svg></span></h1>
       <p class="lead">Commercial cleaning is our specialty, and we clean homes too. We want your business, and we add extra touches to impress you at no added charge.</p>
@@ -321,10 +324,7 @@ footer a:hover{color:var(--sky);text-decoration:underline}
         <a class="btn btn-primary" href="https://shinecommercialcleaning.com/contact-us/">Get a Free Quote Today</a>
         <a class="btn btn-ghost" href="tel:+14036082181"><svg aria-hidden="true"><use href="#i-phone"/></svg>Call 403-608-2181</a>
       </div>
-    </div>
-    <div class="hero-card" aria-hidden="false">
-      <img src="assets/logo.webp" width="1430" height="769" alt="Shine Commercial Cleaning: glass office towers, a green leaf swoosh and a cleaner mopping a polished floor">
-      <span class="badge">Extras at no added charge</span>
+      <span class="chip">Extras at no added charge</span>
     </div>
   </div>
 </section>
