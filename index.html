@@ -235,7 +235,9 @@ footer a:hover{color:var(--sky);text-decoration:underline}
   .fgrid > :first-child{grid-column:1/-1}
 }
 @media (max-width:760px){
-  body{font-size:16px;padding-bottom:76px}
+  body{font-size:16px}
+  footer{padding-bottom:84px}
+  nav li .btn{width:100%}
   section{padding:64px 0}
   .topbar .mail{display:none}
   .topbar .wrap{justify-content:center}
@@ -257,6 +259,21 @@ footer a:hover{color:var(--sky);text-decoration:underline}
   .callbar .quote-b{background:#fff;color:var(--navy)}
   .callbar svg{width:18px;height:18px}
   .glass{display:none}
+}
+
+/* mobile polish: wrapping and tap targets */
+.contact-line a,footer a{overflow-wrap:anywhere}
+.card .cta-link{display:inline-flex;align-items:center;min-height:44px;margin-top:6px}
+.topbar a{padding:.55em 0}
+.copy a{display:inline-flex;align-items:center;min-height:44px}
+footer ul{gap:0}
+footer ul a{display:inline-flex;align-items:center;min-height:44px}
+@media (max-width:760px){
+  .contact-line{flex-direction:column;align-items:center;gap:4px;font-size:1.05rem;margin:1.2em 0 1.6em}
+  .contact-line a{display:inline-flex;align-items:center;min-height:44px;max-width:100%;text-align:center}
+  .copy{flex-direction:column;align-items:flex-start}
+  .hero .chip{margin-top:1.1em}
+  h2{overflow-wrap:break-word}
 }
 @media (prefers-reduced-motion:reduce){
   html{scroll-behavior:auto}
