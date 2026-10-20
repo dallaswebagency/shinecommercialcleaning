@@ -151,7 +151,6 @@ section{padding:90px 0}
 .photo{position:relative;border-radius:30px;overflow:hidden;min-height:420px;background:linear-gradient(150deg,var(--navy),var(--blue));box-shadow:var(--shadow-lg)}
 .photo img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
 .photo .inset{inset:auto;right:18px;bottom:18px;width:46%;height:auto;aspect-ratio:4/3;border-radius:20px;border:5px solid #fff;box-shadow:var(--shadow-lg)}
-.fog-img{position:relative;z-index:1;width:min(360px,100%);height:auto;border-radius:26px;border:5px solid rgba(255,255,255,.9);box-shadow:var(--shadow-lg);transform:rotate(1.5deg)}
 .chips{display:flex;flex-wrap:wrap;gap:10px;margin:1.2em 0 1.8em;padding:0;list-style:none}
 .chips li{background:#fff;border:1px solid var(--line);border-radius:999px;padding:.45em 1em;font-weight:700;font-size:.95rem;color:var(--navy)}
 .chips li::before{content:"";display:inline-block;width:9px;height:9px;border-radius:50%;background:var(--green-bright);margin-right:.55em}
@@ -175,12 +174,6 @@ section{padding:90px 0}
 .step p{color:var(--muted);margin:0}
 .center-cta{text-align:center;margin-top:2.6rem}
 
-/* fogging */
-#fogging{background:linear-gradient(120deg,var(--navy) 0%,#0b4aa0 100%);color:#fff;position:relative;overflow:hidden;padding:70px 0}
-#fogging::after{content:"";position:absolute;right:-80px;top:-80px;width:340px;height:340px;border-radius:50%;background:radial-gradient(circle,rgba(56,182,255,.45),transparent 70%)}
-#fogging .wrap{position:relative;z-index:1;display:flex;align-items:center;justify-content:space-between;gap:30px;flex-wrap:wrap}
-#fogging h2{color:#fff;margin-bottom:.3em}
-#fogging p{color:#d6e6ff;margin:0;font-size:1.1rem}
 
 /* testimonials */
 #customers{background:var(--mist)}
@@ -470,19 +463,6 @@ footer ul a{display:inline-flex;align-items:center;gap:.5em;min-height:40px}
       <div class="step reveal"><span class="sico" aria-hidden="true"><svg><use href="#i-once"/></svg></span><h3>We clean and you relax</h3><p>We bring our own equipment and handle the rest.</p></div>
     </div>
     <div class="center-cta"><a class="btn btn-primary" href="https://shinecommercialcleaning.com/contact-us/">Get a Free Quote Today</a></div>
-  </div>
-</section>
-
-<section id="fogging">
-  <div class="wrap">
-    <div class="reveal">
-      <h2>Fogging services are also available</h2>
-      <p>Available with our usual commercial and residential services.</p>
-    </div>
-    <div class="reveal" style="display:flex;align-items:center;gap:26px;flex-wrap:wrap">
-      <a class="btn btn-primary" href="https://shinecommercialcleaning.com/fogging-services/">More info</a>
-      <img class="fog-img" src="assets/protective-suit-cleaning.webp" width="500" height="333" loading="lazy" alt="Cleaner in a protective suit, mask and gloves vacuuming a bright living room">
-    </div>
   </div>
 </section>
 
